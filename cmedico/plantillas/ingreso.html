@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load bootstrap_toolkit %}
+{% block sub_titulo %}Ingreso{% endblock %}
+{% block login %}{% endblock %}
+{% block proceso %}{% endblock %}
+{% block nav2 %}{% endblock %}
+{% block container %}
+{% if mensaje %}
+    <p>{{ mensaje }}</p>
+{% endif %}
+<form method='post' action='' class='form-horizontal'>{% csrf_token %}
+    <fieldset>
+    <div class="control-group">
+        <div class="controls">
+        {{formu|as_bootstrap}}
+        <!--<input type='submit' value='ingresar'>-->
+        <input class="btn btn-large btn-primary span4" type='submit' value='Ingresar'>
+        </div>
+    </div>
+    </fieldset>
+</form>
+{% endblock %}

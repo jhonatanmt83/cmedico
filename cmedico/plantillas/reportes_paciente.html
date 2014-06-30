@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load bootstrap_toolkit %}
+{% load filtro_template %}
+{% block sub_titulo %}Reportes{% endblock %}
+{% block proceso %}Reportes{% endblock %}
+{% block container2 %}
+    <h3>Tipos de paciente</h3>
+    {% if datos.pacientes %}
+        {% for paciente in datos.pacientes %}
+            <a href='/reportes/detalle/{{ paciente.pk }}'>{{ paciente.nro_historia }} - {{ paciente.nombres }} {{ paciente.apellidos }}</a><br/>
+        {% endfor %}
+    {% endif %}
+
+{% endblock %}
+

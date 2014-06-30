@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load bootstrap_toolkit %}
+{% load filtro_template %}
+{% block sub_titulo %}Reportes{% endblock %}
+{% block proceso %}Reportes{% endblock %}
+{% block container2 %}
+    <h3>Reporte Detallado</h3>
+    {% if datos.fmedica %}
+    <p>Fichas Medicas</p>
+        {% for ficha in datos.fmedica %}
+            <a href='/reportes/detallado/1/{{ ficha.pk }}'>{{ ficha.fconsulta }} - {{ ficha.nro_historia.nombres }} {{ ficha.nro_historia.apellidos }}</a><br/>
+            <p>{{ficha.tratamiento}}</p>
+        {% endfor %}
+    {% endif %}
+    {% if datos.fdental %}
+    <p>Fichas dentales</p>
+        {% for ficha in datos.fdental %}
+            <a href='/reportes/detallado/2/{{ ficha.pk }}'>{{ ficha.fconsulta }} - {{ ficha.nro_historia.nombres }} {{ ficha.nro_historia.apellidos }}</a><br/>
+            <p>{{ficha.tratamiento}}</p>
+        {% endfor %}
+    {% endif %}
+    {% if datos.rayosx %}
+    <p>Fichas de rayox</p>
+        {% for ficha in datos.rayosx %}
+            <a href='/reportes/detallado/3/{{ ficha.pk }}'>{{ ficha.fconsulta }} - {{ ficha.nro_historia.nombres }} {{ ficha.nro_historia.apellidos }}</a><br/>
+        {% endfor %}
+    {% endif %}
+    {% if datos.ecografia %}
+    <p>Fichas de ecografia</p>
+        {% for ficha in datos.ecografia %}
+            <a href='/reportes/detallado/4/{{ ficha.pk }}'>{{ ficha.fconsulta }} - {{ ficha.nro_historia.nombres }} {{ ficha.nro_historia.apellidos }}</a><br/>
+        {% endfor %}
+    {% endif %}
+    {% if datos.laboratorio %}
+    <p>Fichas de laboratorio</p>
+        {% for ficha in datos.laboratorio %}
+            <a href='/reportes/detallado/5/{{ ficha.pk }}'>{{ ficha.fconsulta }} - {{ ficha.nro_historia.nombres }} {{ ficha.nro_historia.apellidos }}</a><br/>
+        {% endfor %}
+    {% endif %}
+
+{% endblock %}
+

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load bootstrap_toolkit %}
+{% load filtro_template %}
+{% block sub_titulo %}Registrar{% endblock %}
+{% block proceso %}Registar Paciente{% endblock %}
+{% block container %}
+		<form class="form-search pull-right" method='post' action=''>{% csrf_token %}
+		  <div class="input-append">
+		    <input type="text" class="span2 search-query" name='buscado'>
+		    <button type="submit" class="btn">Buscar</button>
+		  </div>
+		</form><hr><br>
+		{% if mensaje %}<p>{{mensaje}}</p>{% endif %}
+		<br>
+		<form method='post' action='' class='form-horizontal'>{% csrf_token %}
+			<div class="control-group">
+				<div class="controls">
+					{{formr|as_bootstrap}}
+					{% if actualizar %}<input type='hidden' name='actualizar' value='{{actualizar}}'>{% endif %}
+					<input class='btn btn-large' type='button' value='Cancelar'>
+					<input class="btn btn-large btn-primary span4" type='submit' value='Ingresar'>
+				</div>
+            </div>
+		</form>
+	
+{% endblock %}
+{% block js %}
+	<script type="text/javascript" src="/static/js/script_datos.js"></script>
+{% endblock %}

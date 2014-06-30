@@ -1,0 +1,130 @@
+{% extends 'base.html' %}
+{% load bootstrap_toolkit %}
+{% load filtro_template %}
+{% block sub_titulo %}F. Medica{% endblock %}
+{% block proceso %}Ficha Médica{% endblock %}
+{% block container %}
+	<form method='post' action='' class='form-horizontal'>{% csrf_token %}
+		<fieldset>
+			<div class="control-group">
+				<div class="controls">
+
+                    <div class="control-group required">
+                		<label class="control-label" for="num_historia">Numero de Historia</label>
+		                <div class="controls">
+		                    <input id="num_historia" type="text" name="num_historia" maxlength="6">
+		                    <input class='btn btn-large' type='submit' value='Buscar'>
+		                </div>
+					</div>
+				</div>
+            </div>
+		</fieldset>
+	</form>
+
+	{% if buscado == 'yes' %}
+		<ul>
+		{% for registro in registros %}
+			<li><a href="/operaciones/fmedica/{{registro.datos}}">{{registro.datos}}</a></li>
+		{% empty %}
+			<p>No se encontraron datos.</p>
+		{% endfor %}
+		</ul>
+	{% else %}
+		<hr>
+		<form method='post' action='' class='form-horizontal' id='formulario'>{% csrf_token %}
+			<fieldset>
+				<div class="control-group">
+					<div class="controls">
+						{{formrm|as_bootstrap}}
+						<button id='rayos_x'>Rayos X</button>
+						{{formulario_datos|as_bootstrap}}
+						<input class='btn btn-large' type='button' value='Cancelar'>
+						<input class="btn btn-large btn-primary span4" type='submit' value='Ingresar'>
+					</div>
+	            </div>
+			</fieldset>
+		</form>
+	{% endif %}
+	<div id="dialog-form" title="Create new user">
+	    <p class="validateTips">All form fields are required.</p>
+	 
+	    <form  method='post' action='' class='form-horizontal' id='formulario'>
+	    	{% if formrr %}
+	    	{{formrr|as_bootstrap}}
+	    	{% endif %}
+	    </form>
+	</div>
+{% endblock %}
+{% block js %}
+	<script type="text/javascript" src="/static/js/script_fichas.js"></script>
+	
+    <script type="text/javascript" src="/static/js/jquery-ui-1.8.13.custom.min.js"></script>
+    <script type="text/javascript">
+    	$(function() {
+    		/*
+        var name = $( "#name" ),
+            email = $( "#email" ),
+            password = $( "#password" ),
+            allFields = $( [] ).add( name ).add( email ).add( password ),
+            tips = $( ".validateTips" );
+ 
+        function updateTips( t ) {
+            tips
+                .text( t )
+                .addClass( "ui-state-highlight" );
+            setTimeout(function() {
+                tips.removeClass( "ui-state-highlight", 1500 );
+            }, 500 );
+        }
+ 
+        function checkLength( o, n, min, max ) {
+            if ( o.val().length > max || o.val().length < min ) {
+                o.addClass( "ui-state-error" );
+                updateTips( "Length of " + n + " must be between " +
+                    min + " and " + max + "." );
+                return false;
+            } else {
+                return true;
+            }
+        }
+ 
+        function checkRegexp( o, regexp, n ) {
+            if ( !( regexp.test( o.val() ) ) ) {
+                o.addClass( "ui-state-error" );
+                updateTips( n );
+                return false;
+            } else {
+                return true;
+            }
+        }*/
+ 
+        $( "#dialog-form" ).dialog({
+            autoOpen: false,
+            height: 450,
+            width: 450,
+            modal: true,
+            buttons: {
+                "Create an account": function() {
+                	alert('quedate ahi!!!');
+                    $( this ).dialog( "close" );
+                },
+                Cancel: function() {
+                    $( this ).dialog( "close" );
+                }
+            },
+            close: function() {
+                allFields.val( "" ).removeClass( "ui-state-error" );
+            }
+        });
+ 
+        $( "#rayos_x" )
+            .button()
+            .click(function() {
+                $( "#dialog-form" ).dialog( "open" );
+                return false;
+            });
+    });
+    </script>
+    </script>
+{% endblock %}
+{% block style_css %}<link type="text/css" href="/static/css/custom-theme/jquery-ui-1.8.13.custom.css" rel="stylesheet" />{% endblock %}

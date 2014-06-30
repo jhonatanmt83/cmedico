@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load bootstrap_toolkit %}
+{% load filtro_template %}
+{% block sub_titulo %}Reportes{% endblock %}
+{% block proceso %}Reportes{% endblock %}
+{% block container %}
+    <p>Total de atenciones: {{ atenciones|length }}</p>
+    {% if atenciones %}
+        {% for atencion in atenciones %}
+            <p>Atencion: {{atencion.tipo}} | fecha: {{atencion.fconsulta}}</p>
+        {% endfor %}
+    {% endif %}
+
+{% endblock %}
+

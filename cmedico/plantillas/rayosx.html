@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load bootstrap_toolkit %}
+{% load filtro_template %}
+{% block sub_titulo %}Rayos X{% endblock %}
+{% block proceso %}Rayos X{% endblock %}
+{% block activo5 %}active{% endblock %}
+{% block container %}
+	<form method='post' action='' class='form-horizontal'>{% csrf_token %}
+		{{formrr|as_bootstrap}}
+		<input class="btn btn-large btn-primary span6" type='submit' value='Enviar'>
+
+	</form>
+{% endblock %}
+
+{% block container2 %}
+	<a class="btn btn-large span3" href="/operaciones/placas/">Volver</a>
+{% endblock %}

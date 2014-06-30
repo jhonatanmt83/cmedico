@@ -1,0 +1,94 @@
+3.	CENTRO MEDICO
+3.1	Atención de Usuarios, trabajo en red de los servicios y salida de medicamentos (Fichas que se les otorgara).
+Atención, en los servicios de: Fichas, Enfermería, Médico,  Dental, Rayos X, Laboratorio y Farmacia.  
+
+
+3.1.1	Servicio de Fichas:
+El sistema se contara con una base de datos en el cual se almacenara los datos para la atención de Estudiantes, Administrativos,  
+Docentes y personal de Proyección Social según modelo de las fichas predeterminadas  para la atención Médica o Dental.
+El reporte debe salir en forma mensual, en el cual mostrará la cantidad total de atenciones y por cada una de los pacientes
+3.1.2	  Servicio de Enfermería:
+Se contará con una base de datos en el cual se almacenara los datos de atención de: estudiantes, Administrativos, docentes, proyección social, de lo siguiente:
+•	Controles vitales (peso, talla, presión arterial, temperatura, etc.)
+•	Curaciones de heridas, sacado de puntos,  cirugía menor,  vendajes,  oxigeno terapia, etc.
+•	Administración de Fármacos por vía parenteral: intramuscular, endovenoso, subcutánea. Administración de medicamentos por vía local,  y a veces vía oral taponamiento nasal.
+•	Tisioneumología al paciente y seguimiento.
+•	Lectura del opto tipo
+•	Referencias a hospitales.
+El reporte debe salir en forma mensual, en el cual mostrará la cantidad total de atenciones y por cada una de los pacientes
+
+3.1.3	Servicio Médico:
+Se contará con una base de datos en el cual se almacenará los datos de atención asistencial de estudiantes, administrativos, docentes y proyección social, de las siguientes atenciones:
+•	Recuperativas:
+?	Diagnóstico y tratamiento de pacientes de las diferentes patologías.
+?	Cirugía Menor: suturas, taponamiento nasal y control de la evolución de los mismos.
+?	Otorgar Descansos Médicos.
+?	Referencias a hospitales previo diagnóstico para su confirmación y tratamiento.
+•	Preventivas:
+?	Exámenes Médicos: chequeo.
+•	Administrativos:
+?	Visualización de certificados médicos, emisión de Certificados de Salud.
+3.1.4	Servicio Dental:	
+Se contará con una base de datos en el cual se almacenará los datos de atención asistencial de estudiantes, administrativos, docentes y proyección social, de lo siguiente: 
+•	Examen de la cavidad bucal para el respectivo diagnóstico y tratamiento.
+•	Tratamiento:
+?	Profilaxis: 
+?	Destartaje
+?	Fluorización
+?	Exodoncia
+?	Operatoria dental (curaciones).
+El reporte debe salir en forma mensual, en el cual mostrará la cantidad total de atenciones y por cada una de los pacientes
+
+
+3.1.5	Servicio de Farmacia:
+	El sistema  contará con una base de datos en el cual se almacenara los datos para la atención de Estudiantes, 
+Administrativos,  Docentes y personal de Proyección Social, según modelo de las recetas predeterminadas  para la atención Médica o 
+Dental y pedido de los servicios lo siguiente:
+•	El reporte debe salir en forma mensual, en el cual mostrará la cantidad total de atenciones y por cada uno y grupo de pacientes.
+•	Simultáneamente se realizara el sistema de almacén para el área de Farmacia este sistema contendrá una base de datos que almacenara el ingreso de medicamentos con sus datos respectivos: código, nombre, presentación, laboratorio, fecha de vencimiento, cantidad, tipo, presentación, precio por caja, lote.
+•	En la salida de medicamentos se registraran la fecha, numero de venta(egreso), el código del paciente, apellidos y nombres, tipo de paciente, Si es administrativo el área laboral, si es docente la  facultad, si es estudiante, semestre, código de matrícula, nombre del medicamento, dosis y cantidad del medicamento y total.
+•	También almacenará las devoluciones o canje de medicamentos.
+•	Similar se desarrollará para la entrada y salida de materiales e insumos.
+•	Los reportes se presentaran de forma mensual en el cual mostrara el monto gastado de cada medicamento y el stock actual y el paciente atendido de la forma siguiente: cantidad de estudiantes atendidos por facultad, Docentes, Proyección Social y Administrativos.
+
+3.1.6	Servicio de Laboratorio:
+El sistema  contará con una base de datos en el cual se almacenara los datos para la atención de Estudiantes, Administrativos,  Docentes y personal de Proyección Social, según modelo de órdenes predeterminadas  para la atención de:
+•	Toma de muestra según orden:
+?	Sangre 
+?	Orina
+?	Heces y otros
+•	Análisis a realizar como:
+?	Hemograma
+?	Aglutinaciones
+?	Examen de orina
+?	Examen químico de sangre
+?	Serología.
+?	Parasitológico.
+?	Bacteriología
+?	Embarazo
+El reporte debe salir en forma mensual, en el cual mostrará la cantidad total de atenciones y por cada una de los pacientes.
+3.1.7	Servicio de Rayos X:
+El sistema  contará con una base de datos en el cual se almacenara los datos para la atención de Estudiantes, Administrativos,
+  Docentes y personal de Proyección Social, según modelo de órdenes predeterminadas  para la atención de:
+•	Toma de radiografía de acuerdo a la orden de los médicos y dentistas de lo siguiente:
+?	Huesos:
+Miembros superiores.
+Miembros inferiores
+Cráneo.
+Cavidad bucal
+?	Especiales:
+Riñón
+Estomago
+El reporte debe salir en forma mensual, en el cual mostrará la cantidad total de atenciones y por cada una de los pacientes.
+
+3.1.8	Jefatura:
+El sistema  contará con una base de datos en el cual se almacenara los datos para la atención de Estudiantes, Administrativos, 
+ Docentes, personal de Proyección Social y autoridades superiores, de acuerdo al tipo  de atención que se requiera siendo los siguientes:
+•	Documentos :
+?	Recepción de informes de cada uno de los servicios.
+?	Recepción de documentación de usuarios externos al Centro Médico.
+?	Visualización de recetas médicas, odontológicas, y pedido de materiales.  
+?	Emisión de informes, oficios a instancias superiores.
+?	Solicitud de informes a cada servicio, de acuerdo a la necesidad del Centro Médico.
+El reporte debe salir en forma mensual, en el cual mostrará la cantidad total de atenciones y por cada una de las actividades realizadas,
+ y por cada uno de los estamentos de la universidad, oficinas y usuarios externos a la UNCP.

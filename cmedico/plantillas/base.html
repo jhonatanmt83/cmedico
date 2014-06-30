@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang='es'> 
+    <head> 
+        <meta charset='utf-8'>
+        <title>{% block titulo %}Centro Medico | {% block sub_titulo %}{% endblock %}{% endblock %}</title>
+        <link rel='stylesheet' href='/static/css/bootstrap.css'>
+        <link rel='stylesheet' href='/static/css/bootstrap-responsive.css'>
+        <link rel='shortcut icon' href='/static/img/cmi.png'>
+        {% block style_css %}{% endblock %}
+        <script src='/static/js/jquery-1.7.2.min.js'></script>
+        <!—[if lt IE 9]>
+        <script src='/static/js/html5shiv.js'></script>
+        <![endif]—>
+        <script src='/static/js/bootstrap.js'></script>
+        {% block js %}{% endblock %}
+    </head>
+<body>
+    <header class='container'>
+        <div class='page-header'> 
+            <h1>Centro Médico <small>un mensaje alentador</small></h1>
+        </div>
+    </header>
+
+    <section class='container'>
+        <div class='hero-unit'>
+            <h1>{% block proceso %}{% endblock %}</h1><hr>
+            
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <ul class="nav">
+                        <li class="{% block activo %}{% endblock %}"><a href="/operaciones/registrar">Registrar</a></li>
+                        <li class="{% block activo2 %}{% endblock %}"><a href='/operaciones/enfermeria/'>Enfermeria</a></li>
+                        <li class="{% block activo3 %}{% endblock %}"><a href='/operaciones/fmedica' >Ficha Medica</a></li>
+                        <li class="{% block activo4 %}{% endblock %}"><a href='/operaciones/fdental/'>Ficha Dental</a></li>
+                        <li class="{% block activo5 %}{% endblock %}"><a href='/operaciones/placas/' >Rayos X</a></li>
+                        <li class="{% block activo6 %}{% endblock %}"><a href='/operaciones/laboratorio'>Laboratorio</a></li>
+                        <li class="{% block activo7 %}{% endblock %}"><a href='#'>Farmacia</a></li>
+                        <li class="{% block activo8 %}{% endblock %}"><a href='/operaciones/medicamentos/'>Medicamentos Disponibles</a></li>
+                        <li class="{% block activo9 %}{% endblock %}"><a href='/reportes/'>Reportes</a></li>
+                        <li class="{% block activo10 %}{% endblock %}"><a href='/receta/'>Receta Medica</a></li>
+                    </ul>
+                </div>    
+            </div>
+            <div class="row">
+                <div class="span12">
+                    <div class="span2">
+                        {% block container %}{% endblock %}
+                    </div>
+                             
+                    <div class="span4 offset4">
+                        {% block container2 %}{% endblock %}
+                    </div>
+                </div>
+            </div>            
+        </div>
+    </section>
+
+    <footer class='container'>
+        <p>Oficina General de Bienestar Universitario-FDT &copy;2012</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!--DOCTYPE html>
+<html lang='es'>
+<head>
+  <meta charset='utf-8'>
+  <title>Hola Mundo</title>
+  
+  <link rel='stylesheet' href='css/bootstrap.css'>
+  <!--link rel='stylesheet' href='css/bootstrap-responsive.css'>
+  
+  <script src='js/jquery-1.7.2.min.js'></script>
+  <!—[if lt IE 9]>
+      <script src='js/html5shiv.js'></script>
+  <![endif]—>
+  <script src='js/bootstrap.js'></script>
+  
+
+</head>
+<body>
+  <header class='container'>
+	<div class='page-header'>
+		<h1>Centro Médico <small>un mensaje alentador</small></h1>
+	</div>
+	<nav class='navbar'>
+		<div class='navbar-inner'>
+			<div class='container'>
+				<ul class='nav'>
+				  <li><a href='index.html'><i class='icon-home icon-white'></i></a></li>
+				  <li><a href='operaciones.html'>Operaciones</a></li>
+				  <li class='active'><a href='contacto.html'>Contactanos</a></li>
+                  
+				</ul>
+                <form class='navbar-form form-inline pull-right'>
+                    <input type='text' class='input-small' placeholder='Usuario'>
+                    <input type='password' class='input-small' placeholder='Contraseña'>
+                    <label class="checkbox"><input type="checkbox">Recuerdame</label>
+                    <button type='submit' class='btn'>Ingresar</button>
+                </form>
+			</div>
+		</div>
+	</nav>
+  </header-->
+  
+{% extends 'base.html' %}
+
+{% block titulo %}Contactanos{% endblock %}
+
+{% block container %}
+		<h1>Contactanos</h1>
+        <form class="well">
+            <label>Nombres:</label>
+            <input type="text" class="span3">
+            <label>Correo:</label>
+            <input type="email" class="span3">
+            <label>Mensaje:</label>
+            <textarea rows="4" cols="50"></textarea><br>
+            
+            <button type="submit" class="btn btn-primary btn-large">Enviar</button>
+        </form>
+{% endblock %}
+
+<!--/body>
+</html-->

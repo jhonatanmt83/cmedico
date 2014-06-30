@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% load bootstrap_toolkit %}
+{% load filtro_template %}
+{% block sub_titulo %}Enfermeria{% endblock %}
+{% block proceso %}Enfermeria{% endblock %}
+{% block container %}
+	<form method='post' action='' class='form-horizontal'>{% csrf_token %}
+		<fieldset>
+			<div class="control-group">
+				<div class="controls">
+
+                    <div class="control-group required">
+                		<label class="control-label" for="num_historia">Numero de Historia</label>
+		                <div class="controls">
+		                    <input id="num_historia" type="text" name="num_historia" maxlength="6">
+		                    <input class='btn btn-large' type='submit' value='Buscar'>
+		                </div>
+					</div>
+				</div>
+            </div>
+		</fieldset>
+	</form>
+	
+	{% if buscado == 'yes' %}
+		<ul>
+		{% for registro in registros %}
+			<li><a href="/operaciones/enfermeria/{{registro.datos}}">{{registro.datos}}</a></li>
+		{% empty %}
+			<p>No se encontraron datos.</p>
+		{% endfor %}
+		</ul>
+	{% else %}
+		<hr>
+		<form method='post' action='' class='form-horizontal' id='formulario'>{% csrf_token %}
+			<fieldset>
+				<div class="control-group">
+					<div class="controls">
+						{{formre|as_bootstrap}}
+						<input class='btn btn-large' type='button' value='Cancelar'>
+						<input class="btn btn-large btn-primary span4" type='submit' value='Ingresar' name='ingresar'>
+						<input class="btn btn-large btn-primary span4" type='submit' value='Ingresar e ir a consulta medica' name='ingresar2'>
+					</div>
+	            </div>
+			</fieldset>
+		</form>
+	{% endif %}
+	
+{% endblock %}
+
+{% block js %}
+	<script type="text/javascript" src="/static/js/script_fichas.js"></script>
+{% endblock %}

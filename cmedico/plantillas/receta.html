@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load bootstrap_toolkit %}
+{% load filtro_template %}
+{% block sub_titulo %}Receta Medica{% endblock %}
+{% block proceso %}Receta Medica{% endblock %}
+{% block container %}
+	<form method='post' action='' class='form-horizontal'>{% csrf_token %}
+		<fieldset>
+			<div class="control-group">
+				<div class="controls">
+
+                    <div class="control-group required">
+                		<label class="control-label" for="num_historia">Numero de Historia</label>
+		                <div class="controls">
+		                    <input id="num_historia" type="text" name="num_historia" maxlength="6">
+		                    <input class='btn btn-large' type='submit' value='Buscar'>
+		                </div>
+					</div>
+				</div>
+            </div>
+		</fieldset>
+	</form>
+	
+	{% if consultado == 'yes' %}
+		<ul>
+			Numero de Historial Medico: {{historia_c}} <br>
+			Apellidos y Nombres: {{historia_c.apellidos}} {{historia_c.nombres}} <br>
+			Tipo de Paciente: {{historia_c.paciente}} <br>
+			Doctor: {{enfermeria.doctor}} <br>
+			Tratamiento: {{ficha.tratamiento}} <br>
+			<input class='btn btn-large' type='button' value='Imprimir' onclick="window.print();">
+		</ul>
+	{% else %}
+		
+	{% endif %}
+	
+{% endblock %}

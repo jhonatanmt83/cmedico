@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load bootstrap_toolkit %}
+{% load filtro_template %}
+{% block sub_titulo %}Registrar{% endblock %}
+{% block proceso %}Registar Paciente{% endblock %}
+{% block container %}
+    <form method='post' action='' class='form-horizontal'>{% csrf_token %}
+		<fieldset>
+			<div class="control-group">
+				<div class="controls">
+					{{formrn|as_bootstrap}}
+					<input class='btn btn-large' type='button' value='Cancelar'>
+					<input class="btn btn-large btn-primary span4" type='submit' value='Ingresar'>
+				</div>
+            </div>
+		</fieldset>
+	</form>
+	
+{% endblock %}
+

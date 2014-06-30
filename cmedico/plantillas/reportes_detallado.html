@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+{% load bootstrap_toolkit %}
+{% load filtro_template %}
+{% block sub_titulo %}Reportes{% endblock %}
+{% block proceso %}Reportes{% endblock %}
+{% block container2 %}
+    <h3>Reporte Detalladoasdas</h3>
+    {% if datos.ficha == '1' %}
+        <p>Ficha Medica</p>
+        Numero de Historia Clinica: {{ datos.ficha_dev.nro_historia }}<br>
+        Fecha de consulta: {{ datos.ficha_dev.fconsulta  }}<br>
+        Antedentes Familires: {{ datos.ficha_dev.antefam }}<br>
+        Antedentes Personales: {{ datos.ficha_dev.anteper }}<br>
+        Patologicos: {{ datos.ficha_dev.patologico}}<br>
+        Operaciones: {{ datos.ficha_dev.operaciones}}<br>
+        Tabaco: {{ datos.ficha_dev.get_tabaco_display }}<br>
+        Alcohol: {{ datos.ficha_dev.get_alcohol_display }}<br>
+        Coca: {{ datos.ficha_dev.get_coca_display }}<br>
+        Cafe: {{ datos.ficha_dev.get_cafe_display }}<br>
+        Exposicion: {{ datos.ficha_dev.expo }}<br>
+        Tiempo de enfermedad actual: {{ datos.ficha_dev.enfermedad }}<br>
+        Forma de inicio: {{ datos.ficha_dev.forma_inicio }}<br>
+        Anamnesis: {{ datos.ficha_dev.anamnesis }}<br>
+        General: {{ datos.ficha_dev.general }}<br>
+        Cabeza/cara: {{ datos.ficha_dev.cabeza }}<br>
+        Cuello: {{ datos.ficha_dev.cuello }}<br>
+        Torax: {{ datos.ficha_dev.torax }}<br>
+        Pulmones: {{ datos.ficha_dev.pulmones }}<br>
+        Corazon: {{ datos.ficha_dev.corazon }}<br>
+        Abdomen: {{ datos.ficha_dev.abdomen }}<br>
+        Bazo: {{ datos.ficha_dev.bazo }}<br>
+        Columna Vertebral: {{ datos.ficha_dev.colvertebral }}<br>
+        Extremidades: {{ datos.ficha_dev.extremidad }}<br>
+        Uro-Genital: {{ datos.ficha_dev.ugenital }}<br>
+        Sistema Nervios: {{ datos.ficha_dev.nervioso }}<br>
+        Otros examenes: {{ datos.ficha_dev.otro }}<br>
+        Diagnostico: {{ datos.ficha_dev.diagnostico }}<br>
+        Tratamiento: {{ datos.ficha_dev.tratamiento }}<br>
+        Examenes Especiales: {{ datos.ficha_dev.especial }}<br>
+
+    
+    {% elif datos.ficha == '2' %}
+        <p>Ficha dental</p>
+        Numero de Historia Clinica: {{ datos.ficha_dev.nro_historia }}<br>
+        Fecha de consulta: {{ datos.ficha_dev.fconsulta  }}<br>
+        Higiene: {{ datos.ficha_dev.get_higiene_display }}<br>
+        Hiperemia: {{ datos.ficha_dev.get_hiperemia_display }}<br>
+        Exposicion: {{ datos.ficha_dev.expo }}<br>
+        Calsificacion: {{ datos.ficha_dev.calificacion}}<br>
+        Muerta: {{ datos.ficha_dev.get_muerta_display }}<br>
+        Condensacion: {{ datos.ficha_dev.condensacion}}<br>
+        Rarefaccion: {{ datos.ficha_dev.rarefaccion}}<br>
+        Quiste: {{ datos.ficha_dev.quiste}}<br>
+        Abceso: {{ datos.ficha_dev.abceso}}<br>
+        Oclusion: {{ datos.ficha_dev.oclusion}}<br>
+        Limpia: {{ datos.ficha_dev.get_limpia_display }}<br>
+        Gingivitis: {{ datos.ficha_dev.gingivitis}}<br>
+        Pericementoclacia: {{ datos.ficha_dev.bolsas}}<br>
+        Alveoclacia: {{ datos.ficha_dev.movilidad}}<br>
+        Estado Periapical: {{ datos.ficha_dev.estado}}<br>
+        Pronostico: {{ datos.ficha_dev.pronostico}}<br>
+        Pericoronaritis: {{ datos.ficha_dev.perico}}<br>
+        ATM: {{ datos.ficha_dev.atm}}<br>
+        Otros: {{ datos.ficha_dev.otros}}<br>
+        Protesis: {{ datos.ficha_dev.protesis}}<br>
+        Tratamiento: {{ datos.ficha_dev.tratamiento}}<br>
+    {% elif datos.ficha == '3' %}
+        <p>Ficha de rayox</p>
+        Numero de Historia Clinica: {{ datos.ficha_dev.nro_historia}}<br>
+        Hueso: {{ datos.ficha_dev.codigo}}<br>
+        Paciente tipo: {{ datos.ficha_dev.get_paci_tip_display }}<br>
+        Nroplacas: {{ datos.ficha_dev.nroplacas}}<br>
+        Derecho: {{ datos.ficha_dev.derecho}}<br>
+        Izquierdo: {{ datos.ficha_dev.izquierdo}}<br>
+        Otro: {{ datos.ficha_dev.otro}}<br>
+        Resultado: {{ datos.ficha_dev.resultado}}<br>
+    {% elif datos.ficha == '4' %}
+        <p>Ficha de ecografia</p>
+        Numero de Historia Clinica: {{ datos.ficha_dev.nro_historia }}<br>
+        Fecha de consulta: {{ datos.ficha_dev.fconsulta }}<br>
+        Ecografia: {{ datos.ficha_dev.ecografia }}<br>
+        Analisis:<br>
+        <ul>
+        {% for item in datos.ficha_dev.eco_analisis.all %}
+            <li>{{item}}</li>
+        {% endfor %}
+        </ul>
+        Resultado: {{ datos.ficha_dev.resultado }}<br>
+        
+    {% elif datos.ficha == "5" %}
+        <p>Ficha de laboratorio</p>
+        Numero de Historia Clinica: {{ datos.ficha_dev.nro_historia }}<br>
+        Fecha de consulta: {{ datos.ficha_dev.fconsulta }}<br>
+        Tipo de examen: {{ datos.ficha_dev.muestra }}<br>
+        Analisis: <br>
+        <ul>
+        {% for item in datos.ficha_dev.analisis.all %}
+            <li>{{item}}</li>
+        {% endfor %}
+        </ul>
+        Resultado: {{ datos.ficha_dev.resultado }}<br>
+        {% for item in datos.ficha_dev.analisis.all %}
+            {{item}}
+        {% endfor %}
+    {% endif %}
+
+{% endblock %}
+
